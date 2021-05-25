@@ -9,6 +9,9 @@ define("MINIMO", 1);
 $dado_player = array();
 $dado_com = array();
 $imagem = array();
+$resultado;
+$resultado1;
+
 ?>
 
 
@@ -137,7 +140,7 @@ $imagem = array();
 <?php 
 $resultado = soma($imagem[0], $imagem[1]);
 
-echo $resultado;
+echo $resultado." PTS";
 ?>
 
 </div>
@@ -164,11 +167,11 @@ echo $resultado;
 
             <?php 
 
-            $resultado = soma($imagem[2], $imagem[3]);
+            $resultado1 = soma($imagem[2], $imagem[3]);
 
 
 
-            echo $resultado;
+            echo $resultado1." PTS";
             ?>
 
             </div>
@@ -189,9 +192,31 @@ return $n1 +$n2;
            </div>
 
           
+           <div class=" resultado">
+
+<?php 
+
+if($resultado > $resultado1)
+
+echo "O Jogador  ".$_POST['nome']." venceu"."<br />";
+else
+if( $resultado < $resultado1)
+
+echo " Jogador Computador Venceu";
+
+else
+
+echo " Jogo empatou.";
+
+?>
+
+           </div>
 
            </div>
        
+
+
+
            </div> 
            </div>
 </body>

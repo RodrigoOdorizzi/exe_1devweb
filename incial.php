@@ -20,16 +20,16 @@
 <body>
 
     <div class="geral">
-        <div class="cont" style="border: 1px solid #000;">
+        <div class="cont" style="border: 1px solid #000; width: 300px; height:300px; margin-top:150px  ">
  
-<p>
+<p style="font-size: 20px;">
 
-Jogos dos dados
+Jogo dos dados
 </p>
 
 <form action="index.php" method="POST">
 
-        <input type="text" name="nome" id="name" value="Informe seu nome" class="meunome"> 
+        <input type="text" name="nome" id="nome" value="Informe seu nome" class="meunome"> 
 
 
         <a href="index.php" target="_black">
