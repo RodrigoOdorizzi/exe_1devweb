@@ -14,7 +14,49 @@ $resultado1;
 
 ?>
 
+<?php
 
+
+function geradado()
+{
+
+
+    mt_srand();
+
+
+
+
+    for ($i = 0; $i < NUMEROS; $i++) {
+
+
+
+        $dado_player[$i] = mt_rand(MINIMO, MAXIMO);
+        $GLOBALS['imagem'][$i] = $dado_player[$i];
+    }
+
+
+    //mostra valores dos dados
+    /* 
+    for ($i = 0; $i < NUMEROS; $i++) {
+
+        echo  $dado_player[$i] . "<br>";
+    }
+*/
+}
+
+
+?>
+
+
+<?php
+
+function soma($n1,$n2){
+
+return $n1 +$n2;
+
+}
+
+?>
 
 <html lang="pt-BR">
 
@@ -35,38 +77,7 @@ $resultado1;
     <div class="geral">
         <div class="cont">
 
-            <?php
-
-
-            function geradado()
-            {
-
-
-                mt_srand();
-
-
-
-
-                for ($i = 0; $i < NUMEROS; $i++) {
-
-
-
-                    $dado_player[$i] = mt_rand(MINIMO, MAXIMO);
-                    $GLOBALS['imagem'][$i] = $dado_player[$i];
-                }
-
-
-                //mostra valores dos dados
-                /* 
-                for ($i = 0; $i < NUMEROS; $i++) {
-
-                    echo  $dado_player[$i] . "<br>";
-                }
-   */
-            }
-
-
-            ?>
+       
 
             <?php
 
@@ -176,15 +187,7 @@ echo $resultado." PTS";
 
             </div>
 
-<?php
 
-function soma($n1,$n2){
-
-return $n1 +$n2;
-
-}
-
-?>
 
 
 
