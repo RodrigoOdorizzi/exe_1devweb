@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 
-
-<?php
-
-define("NUMEROS", 4);
-define("MAXIMO", 6);
-define("MINIMO", 1);
-$dado_player = array();
-$dado_com = array();
-$imagem = array();
-$resultado;
-$resultado1;
-
-?>
-
+ 
 
 
 <html lang="pt-BR">
@@ -33,189 +20,25 @@ $resultado1;
 <body>
 
     <div class="geral">
-        <div class="cont">
-
-            <?php
-
-
-            function geradado()
-            {
-
-
-                mt_srand();
-
-
-
-
-                for ($i = 0; $i < NUMEROS; $i++) {
-
-
-
-                    $dado_player[$i] = mt_rand(MINIMO, MAXIMO);
-                    $GLOBALS['imagem'][$i] = $dado_player[$i];
-                }
-
-
-                //mostra valores dos dados
-                /* 
-                for ($i = 0; $i < NUMEROS; $i++) {
-
-                    echo  $dado_player[$i] . "<br>";
-                }
-   */
-            }
-
-
-            ?>
-
-            <?php
-
-            geradado();
-
-            ?>
-
-            <div class="img">
-
-                <?php
-
-
-        for ($i = 0; $i < NUMEROS; $i++) {
-                if ($imagem[$i] == 1)
-
-                    $imagemurl[$i] = "img/dado1.png";
-
-                else
+        <div class="cont" style="border: 1px solid #000; width: 300px; height:300px; margin-top:150px  ">
  
-                if ($imagem[$i] == 2)
+<p style="font-size: 20px;">
 
-                $imagemurl[$i] = "img/dado2.png";
+Jogo dos dados
+</p>
 
-                else
- 
+<form action="result.php" method="POST">
+
+        <input type="text" name="nome" id="nome" value="Informe seu nome" class="meunome"> 
+
+
+        <a href="result.php" target="_black">
             
-                if ($imagem[$i] == 3)
+        <input type="submit" name="subimite" value="Jogar!" class="meubotao">
+        
+    </a>
 
-                $imagemurl[$i] = "img/dado3.png";
-
-                else
- 
-            
-                if ($imagem[$i] == 4)
-
-                $imagemurl[$i] = "img/dado4.png";
-
-                else
- 
-            
-                if ($imagem[$i] == 5)
-
-                $imagemurl[$i] = "img/dado5.png";
-
-                else
- 
-            
-                if ($imagem[$i] == 6)
-
-                   $imagemurl[$i] = "img/dado6.png";
-
-        }
-                ?>
-
-            <div class="part">
-            <div class="title">
-          
-            <p>
-         <?php  echo  $_POST['nome']?>
-                </p>
-            </div>
-                 <div class="dad">
-              <img src="<?php echo $imagemurl[0]; ?>">
-              </div>  
-                <div class="dad" style="margin-left: 5px;"> 
-                    <img src="<?php echo $imagemurl[1]; ?>">
-              </div>
-
-              <div class="soma">
-
-<?php 
-$resultado = soma($imagem[0], $imagem[1]);
-
-echo $resultado." PTS";
-?>
-
-</div>
-
-            </div>
-          
-
-            <div class="part" style="margin-left: 10px;">
-
-              <div class="title">
-          
-                  <p>
-                      Computador:
-                  </p>
-              </div>
-               <div class="dad">
-                     <img src="<?php echo $imagemurl[2]; ?>">
-               </div>  
-              <div class="dad" style="margin-left: 5px;"> 
-                  <img src="<?php echo $imagemurl[3]; ?>">
-              </div>
-           
-            <div class="soma">
-
-            <?php 
-
-            $resultado1 = soma($imagem[2], $imagem[3]);
-
-
-
-            echo $resultado1." PTS";
-            ?>
-
-            </div>
-
-<?php
-
-function soma($n1,$n2){
-
-return $n1 +$n2;
-
-}
-
-?>
-
-
-
-
-           </div>
-
-          
-           <div class=" resultado">
-
-<?php 
-
-if($resultado > $resultado1)
-
-echo "O Jogador  ".$_POST['nome']." venceu"."<br />";
-else
-if( $resultado < $resultado1)
-
-echo " Jogador Computador Venceu";
-
-else
-
-echo " Jogo empatou.";
-
-?>
-
-           </div>
-
-           </div>
-       
-
-
+</form>
 
            </div> 
            </div>
