@@ -52,4 +52,15 @@ height: 30px;
 margin: auto;
 float: left;
 font-size: 20px;
-text-align: center;}
+text-align: center;
+}
+
+a .meubotao{ width: 150px; height: 150px;font-size: 20px;}
+
+INPUT .meunome{
+
+width: 180px;
+height: 40px;
+float: left;
+
+}

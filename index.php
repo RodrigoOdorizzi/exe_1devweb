@@ -122,7 +122,7 @@ $imagem = array();
             <div class="title">
           
             <p>
-            Jogador:
+         <?php  echo  $_POST['nome']?>
                 </p>
             </div>
                  <div class="dad">
@@ -163,7 +163,10 @@ echo $resultado;
             <div class="soma">
 
             <?php 
+
             $resultado = soma($imagem[2], $imagem[3]);
+
+
 
             echo $resultado;
             ?>
@@ -181,8 +184,11 @@ return $n1 +$n2;
 ?>
 
 
+
+
            </div>
 
+          
 
            </div>
        
