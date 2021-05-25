@@ -7,7 +7,6 @@
 }
 
 .geral {
-  background-color: blue;
 }
 body {
   margin: auto;
@@ -16,10 +15,41 @@ body {
   height: 100%;
 }
 .img {
-  width: 190px;
-  height: 190px;
-
+  width:360px;
+  height: 390px;
   margin: auto;
-  float: right;
+  float: left;
   background-color: crimson;
 }
+.part{
+    width: 135px;
+    height: 200px;
+    margin: auto;
+    float: left;
+   
+    border: 1px solid #000;;
+}
+.dad{
+    width: 61px;
+    height: 61px;
+    float: left;
+
+}
+.title{
+    width: 125px;
+    height: 30px;
+    margin: auto;
+float:left;
+background-color: darkgoldenrod;
+}
+
+.title p{
+margin-top: 5px;
+
+}
+.soma{width: 135;
+height: 30px;
+margin: auto;
+float: left;
+font-size: 20px;
+text-align: center;}

@@ -3,12 +3,12 @@
 
 <?php
 
-define("NUMEROS", 2);
+define("NUMEROS", 4);
 define("MAXIMO", 6);
 define("MINIMO", 1);
 $dado_player = array();
 $dado_com = array();
-$imagem;
+$imagem = array();
 ?>
 
 
@@ -49,15 +49,17 @@ $imagem;
 
 
                     $dado_player[$i] = mt_rand(MINIMO, MAXIMO);
-                    $GLOBALS['imagem'] = $dado_player[0];
+                    $GLOBALS['imagem'][$i] = $dado_player[$i];
                 }
 
 
-
+                //mostra valores dos dados
+                /* 
                 for ($i = 0; $i < NUMEROS; $i++) {
 
                     echo  $dado_player[$i] . "<br>";
                 }
+   */
             }
 
 
@@ -68,68 +70,124 @@ $imagem;
             geradado();
 
             ?>
+
             <div class="img">
-
-
 
                 <?php
 
 
-                if ($imagem == 1)
+        for ($i = 0; $i < NUMEROS; $i++) {
+                if ($imagem[$i] == 1)
 
-                    $imagemurl = "img/dado_1.png";
-
-                else
- 
-                if ($imagem == 2)
-
-                    $imagemurl = "img/dado_2.png";
+                    $imagemurl[$i] = "img/dado1.png";
 
                 else
  
-            
-                if ($imagem == 3)
+                if ($imagem[$i] == 2)
 
-                    $imagemurl = "img/dado_3.png";
+                $imagemurl[$i] = "img/dado2.png";
 
                 else
  
             
-                if ($imagem == 4)
+                if ($imagem[$i] == 3)
 
-                    $imagemurl = "img/dado_4.png";
-
-                else
- 
-            
-                if ($imagem == 5)
-
-                    $imagemurl = "img/dado_5.png";
+                $imagemurl[$i] = "img/dado3.png";
 
                 else
  
             
-                if ($imagem == 6)
+                if ($imagem[$i] == 4)
 
-                    $imagemurl = "img/dado_6.png";
+                $imagemurl[$i] = "img/dado4.png";
 
+                else
+ 
+            
+                if ($imagem[$i] == 5)
 
+                $imagemurl[$i] = "img/dado5.png";
 
+                else
+ 
+            
+                if ($imagem[$i] == 6)
 
+                   $imagemurl[$i] = "img/dado6.png";
+
+        }
                 ?>
 
+            <div class="part">
+            <div class="title">
+          
+            <p>
+            Jogador:
+                </p>
+            </div>
+                 <div class="dad">
+              <img src="<?php echo $imagemurl[0]; ?>">
+              </div>  
+                <div class="dad" style="margin-left: 5px;"> 
+                    <img src="<?php echo $imagemurl[1]; ?>">
+              </div>
 
+              <div class="soma">
 
-                <img src="<?php echo $imagemurl; ?>">
+<?php 
+$resultado = soma($imagem[0], $imagem[1]);
 
+echo $resultado;
+?>
 
+</div>
+
+            </div>
+          
+
+            <div class="part" style="margin-left: 10px;">
+
+              <div class="title">
+          
+                  <p>
+                      Computador:
+                  </p>
+              </div>
+               <div class="dad">
+                     <img src="<?php echo $imagemurl[2]; ?>">
+               </div>  
+              <div class="dad" style="margin-left: 5px;"> 
+                  <img src="<?php echo $imagemurl[3]; ?>">
+              </div>
+           
+            <div class="soma">
+
+            <?php 
+            $resultado = soma($imagem[2], $imagem[3]);
+
+            echo $resultado;
+            ?>
 
             </div>
 
+<?php
+
+function soma($n1,$n2){
+
+return $n1 +$n2;
+
+}
+
+?>
 
 
-        </div>
-    </div>
+           </div>
+
+
+           </div>
+       
+           </div> 
+           </div>
 </body>
 
 </html>
